@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeAlpha Store - Online Shopping</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#f5f5f5}
+header{background:#111;color:#fff;padding:15px;display:flex;justify-content:space-between;align-items:center}
+header h1{font-size:20px}
+nav a{color:#fff;margin-left:15px;text-decoration:none}
+.hero{background:linear-gradient(to right,#ff416c,#ff4b2b);color:#fff;padding:60px 20px;text-align:center}
+.hero h2{font-size:28px}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:15px}
+.card{background:#fff;border-radius:10px;padding:10px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.card img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+.card h3{font-size:16px;margin:10px 0 5px}
+.card p{color:#ff4b2b;font-weight:bold}
+.card button{background:#111;color:#fff;border:none;padding:8px 15px;border-radius:5px;margin-top:8px;width:100%}
+footer{background:#111;color:#fff;text-align:center;padding:15px;margin-top:20px}
+</style>
+</head>
+<body>
+<header>
+<h1>CodeAlpha Store</h1>
+<nav><a href="#">Home</a><a href="#">Cart (0)</a></nav>
+</header>
+<div class="hero">
+<h2>Big Sale - Up to 50% OFF</h2>
+<p>Best Online Shopping Store in Pakistan</p>
+</div>
+<div class="products">
+<div class="card">
+<img src="https://via.placeholder.com/200?text=Shoes">
+<h3>Running Shoes</h3>
+<p>Rs. 2,999</p>
+<button>Add to Cart</button>
+</div>
+<div class="card">
+<img src="https://via.placeholder.com/200?text=Watch">
+<h3>Smart Watch</h3>
+<p>Rs. 4,500</p>
+<button>Add to Cart</button>
+</div>
+<div class="card">
+<img src="https://via.placeholder.com/200?text=Headphone">
+<h3>Headphone</h3>
+<p>Rs. 1,999</p>
+<button>Add to Cart</button>
+</div>
+<div class="card">
+<img src="https://via.placeholder.com/200?text=T-Shirt">
+<h3>T-Shirt</h3>
+<p>Rs. 999</p>
+<button>Add to Cart</button>
+</div>
+</div>
+<footer>© 2026 CodeAlpha Ecommerce Store | Made for Internship</footer>
+</body>
+</html>
