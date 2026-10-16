@@ -1,84 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ZAINAB COLLECTION</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial}
-body{background:#faf8f5}
-.h{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #eee;padding:12px 16px}
-.top{display:flex;justify-content:space-between;align-items:center;max-width:1300px;margin:auto}
-.logo{font-weight:900}
-.search{max-width:1300px;margin:12px auto 0;display:flex;gap:8px}
-.search input{flex:1;padding:12px 14px;border:1px solid #ddd;border-radius:12px;outline:none}
-.search button{padding:12px 18px;border:none;background:#000;color:#fff;border-radius:12px;font-weight:700}
-.g{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:14px;max-width:1300px;margin:auto}
-@media(max-width:900px){.g{grid-template-columns:repeat(2,1fr)}}
-.c{background:#fff;border:1px solid #eee;border-radius:16px;overflow:hidden;cursor:pointer}
-.c img{width:100%;height:230px;object-fit:cover;background:#fff}
-.i{padding:10px}.n{font-size:13px;font-weight:700;height:36px;overflow:hidden;line-height:1.3}
-.stars{color:#ffb400;font-size:12px;margin:4px 0}
-.pr{display:flex;gap:8px;align-items:center;margin-top:4px;flex-wrap:wrap}
-.new{font-weight:900;font-size:15px}.old{font-size:12px;color:#999;text-decoration:line-through}
-.off{background:#e11;color:#fff;font-size:10px;padding:2px 6px;border-radius:20px;font-weight:700}
-#modal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;z-index:99;overflow:auto}
-#box{background:#fff;max-width:950px;margin:18px auto;border-radius:18px;overflow:hidden;position:relative}
-#mainImg{width:100%;height:460px;object-fit:cover;background:#fff}
-.thumbs{display:flex;gap:8px;padding:12px;overflow:auto;background:#fafafa}
-.thumbs img{width:82px;height:82px;object-fit:cover;border-radius:10px;border:2px solid transparent;cursor:pointer;background:#fff}
-.thumbs img.active{border-color:#000}
-.det{padding:16px}.det h2{font-size:18px}
-.det .row{display:flex;gap:8px;align-items:center;margin-top:8px}
-.close{position:absolute;top:12px;right:16px;background:#fff;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:22px;cursor:pointer;z-index:2}
-.btn{width:100%;padding:14px;background:#000;color:#fff;border:none;border-radius:12px;margin-top:12px;font-weight:800;font-size:15px}
-</style>
-</head>
-<body>
-<div class="h">
-<div class="top"><div class="logo">ZAINAB COLLECTION</div><div>🛒<b>0</b></div></div>
-<div class="search"><input id="s" placeholder="Search bouquets, lunch box, shoes, cakes..."><button onclick="doSearch()">Search</button></div>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#fdfbf7;font-family:Inter;padding-bottom:70px}
+.header{padding:14px 16px;background:#fff;position:sticky;top:0;z-index:10;border-bottom:1px solid #eee;display:flex;justify-content:space-between}
+.logo{font-family:'Playfair Display';font-size:20px}.logo i{color:#d88a9a}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:10px;max-width:1300px;margin:auto}
+.card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #f0e6d8;cursor:pointer}
+.card img{width:100%;height:200px;object-fit:cover}
+.info{padding:10px}.name{font-size:11px;font-weight:600;height:32px;overflow:hidden}
+.price{font-weight:800;font-size:13px}.old{font-size:10px;color:#999;text-decoration:line-through;margin-left:4px}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #eee;display:flex;justify-content:space-around;padding:8px 0;z-index:99}
+.bottom div{text-align:center;font-size:11px;cursor:pointer}.bottom div.active{color:#d88a9a;font-weight:700}.bottom span{font-size:20px;display:block}
+.modal{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;z-index:200;display:none;overflow:auto}.modal.show{display:block}
+.detail-img{width:100%;height:340px;object-fit:cover}
+.detail-info{padding:16px;max-width:600px;margin:auto}
+.back{padding:12px 16px;display:flex;justify-content:space-between;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff}
+.btns{display:flex;gap:8px;margin-top:14px}.btn{flex:1;padding:14px;border-radius:100px;border:none;font-weight:700}
+.msg{background:#fff;border:1px solid #000}.buy{background:#000;color:#fff}
+.page{position:fixed;top:0;left:0;right:0;bottom:60px;background:#fdfbf7;z-index:150;display:none;padding:16px}.page.show{display:block}
+.chat{background:#fff;border-radius:12px;padding:12px;margin-bottom:10px;border:1px solid #eee}
+</style></head><body>
+<div class="header"><div class="logo">ZAINAB <i>COLLECTION</i></div><div>Bag (<span id="cnt">0</span>)</div></div>
+<div class="grid" id="grid"></div>
+<div class="bottom">
+<div class="active" onclick="showHome()"><span>🏠</span>Home</div>
+<div onclick="showMessages()"><span>💬</span>Messages</div>
+<div onclick="showCart()"><span>👜</span>Bag</div>
+<div onclick="showProfile()"><span>👤</span>Profile</div></div>
+<div class="modal" id="detail">
+<div class="back"><span onclick="closeDetail()">← Back</span><span>❤️</span></div>
+<img id="dImg" class="detail-img"><div class="detail-info">
+<h3 id="dName" style="font-family:'Playfair Display'"></h3>
+<div><span id="dPrice" style="font-weight:800;font-size:20px"></span><span id="dOld" style="color:#999;text-decoration:line-through;margin-left:6px"></span> <span id="dOff" style="font-size:10px;background:#fdf0f2;color:#d88a9a;padding:3px 8px;border-radius:20px"></span></div>
+<div style="margin-top:12px;font-size:13px;line-height:1.6;background:#fff;padding:12px;border-radius:12px;border:1px solid #eee">
+<b>📦 Andar Kya Hai:</b><br><span id="dInside"></span><br><br>
+<b>✨ Details:</b><br>• 100% Original<br>• Same Day Delivery<br>• Premium Packing
 </div>
-<div class="g" id="grid"></div>
-<div id="modal"><div id="box"><div class="close" onclick="closeM()">×</div><img id="mainImg"><div class="thumbs" id="thumbs"></div><div class="det"><h2 id="mName"></h2><div class="row"><span id="mStars" class="stars"></span><span id="mRating" style="font-size:12px;color:#666"></span></div><div class="row" id="mPrice"></div><button class="btn">Add to Cart - Order Now on WhatsApp</button><p style="font-size:12px;color:#666;margin-top:10px">Inside similar colors / designs available</p></div></div></div>
+<div class="btns"><button class="btn msg" onclick="showMessages()">💬 Message</button><button class="btn buy" onclick="addFromDetail()">Add to Bag</button></div>
+</div></div>
+
+<div class="page" id="msgPage"><h3>Messages</h3>
+<div style="margin-top:12px"><div class="chat"><b>Store 🏪</b><br><span style="font-size:12px">Andar wale gifts available hain!</span></div>
+<div class="chat" style="background:#000;color:#fff"><b>You:</b><br><span style="font-size:12px">Andar card bhi hai?</span></div></div>
+<input placeholder="Type message..." style="width:100%;padding:12px;border-radius:100px;border:1px solid #ddd;margin-top:12px"></div>
+
+<div class="page" id="profilePage"><h3>My Profile</h3>
+<div style="margin-top:12px;background:#fff;border-radius:16px;padding:16px;border:1px solid #eee">
+<div style="display:flex;gap:12px"><div style="width:50px;height:50px;background:#fdf0f2;border-radius:50%;display:grid;place-items:center">👤</div><div><b>Zainab User</b><br><span style="font-size:12px;color:#999">Rawalpindi</span></div></div>
+<div style="margin-top:12px;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;font-size:11px">
+<div>💳 To Pay</div><div>📦 To Ship</div><div>🚚 To Receive</div><div>⭐ Reviews</div></div>
+<div style="margin-top:12px;font-size:13px;line-height:2.5">❤️ Wishlist<br>🏪 Followed Stores<br>💬 My Chat<br>🎟️ Vouchers<br>❓ Help Center</div>
+</div></div>
+
 <script>
 const products=[
-{id:1,name:"Frozen Lunch Box Set - Bottle + Box",price:649,old:899,rating:4.9,reviews:210,cover:"1.jpg",gallery:["1.jpg"]},
-{id:2,name:"Red Roses Bouquet - White Wrap 50 Roses",price:2500,old:3200,rating:4.9,reviews:124,cover:"2.jpg",gallery:["2.jpg","3.jpg","4.jpg","5.jpg"]},
-{id:3,name:"Chocolate Bouquet - KitKat + Dairy Milk + Roses",price:3500,old:4200,rating:4.8,reviews:210,cover:"3.jpg",gallery:["3.jpg","2.jpg","4.jpg"]},
-{id:4,name:"100 Red Roses Big Bouquet Premium",price:5500,old:6999,rating:5.0,reviews:89,cover:"4.jpg",gallery:["4.jpg","2.jpg","3.jpg"]},
-{id:5,name:"Star Chain Sneakers - 3 Colors - Size 36-41",price:3200,old:4200,rating:4.9,reviews:312,cover:"5.jpg",gallery:["5.jpg"]},
-{id:6,name:"Purple Mix Bouquet - White & Pink Roses",price:2800,old:3500,rating:4.7,reviews:67,cover:"6.jpg",gallery:["6.jpg","2.jpg","3.jpg"]},
-{id:7,name:"Breakfast Deal - French Toast + Soup + Iced Coffee",price:1200,old:1500,rating:4.6,reviews:45,cover:"7.jpg",gallery:["7.jpg","8.jpg"]},
-{id:8,name:"Cake & Coffee - Strawberry + Lemon Slice",price:900,old:1200,rating:4.8,reviews:98,cover:"8.jpg",gallery:["8.jpg","7.jpg"]},
-{id:9,name:"Pink & White Mix Roses Bouquet",price:2200,old:0,rating:4.8,reviews:153,cover:"9.jpg",gallery:["9.jpg","2.jpg","6.jpg"]}
+{id:1,name:"Frozen Lunch Box Set",price:649,old:899,inside:"Andar: lunch box 2 compartments + bottle",img:"https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=600"},
+{id:2,name:"Red Roses Bouquet 50",price:2500,old:3200,inside:"Andar: 50 roses + white wrap + card",img:"https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=600"},
+{id:3,name:"Chocolate Bouquet",price:3500,old:4200,inside:"Andar: KitKat + Dairy Milk + roses",img:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600"},
+{id:4,name:"100 Red Roses Big",price:5500,old:6999,inside:"Andar: 100 roses + card",img:"https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600"},
+{id:5,name:"Star Sneakers 3 Colors",price:3200,old:4200,inside:"Andar: cushioned sole + box",img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600"},
+{id:6,name:"Purple Mix Bouquet",price:2800,old:3500,inside:"Andar: purple mix flowers",img:"https://images.unsplash.com/photo-1487070183336-bbbb2ef0aaf0?w=600"},
+{id:7,name:"Breakfast Deal Toast",price:1200,old:1500,inside:"Andar: toast + jam inside + coffee",img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600"},
+{id:8,name:"Cake & Coffee Combo",price:900,old:1200,inside:"Andar: strawberry + lemon cake + coffee",img:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600"},
+{id:9,name:"Pink White Roses",price:2200,old:2800,inside:"Andar: pink white mix",img:"https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600"},
+{id:10,name:"Luxury Hamper Andar Teddy",price:4500,old:5500,inside:"Andar: teddy + chocolates + box",img:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600"},
+{id:11,name:"Pink Teddy Heart",price:1800,old:2200,inside:"Andar: soft heart inside",img:"https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600"},
+{id:12,name:"Explosion Box Andar Photos",price:3800,old:4500,inside:"Andar: photos + chocolates surprise",img:"https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600"}
 ];
-function render(list){
-document.getElementById('grid').innerHTML=list.map(p=>{
-let off=p.old?Math.round((p.old-p.price)/p.old*100):0;
-return `<div class="c" onclick="openM(${p.id})"><img src="${p.cover}" loading="lazy"><div class="i"><div class="n">${p.name}</div><div class="stars">★★★★★ <span style="color:#666;font-size:11px">(${p.reviews})</span></div><div class="pr"><span class="new">Rs. ${p.price}</span>${p.old?`<span class="old">Rs. ${p.old}</span><span class="off">-${off}%</span>`:''}</div></div></div>`;
-}).join('');
-}
-render(products);
-function doSearch(){
-let q=document.getElementById('s').value.toLowerCase();
-let f=products.filter(p=>p.name.toLowerCase().includes(q));
-render(f.length?f:products);
-}
-document.getElementById('s').addEventListener('input',doSearch);
-function openM(id){
-let p=products.find(x=>x.id===id);
-document.getElementById('mainImg').src=p.cover;
-document.getElementById('mName').innerText=p.name;
-document.getElementById('mStars').innerText='★★★★★';
-document.getElementById('mRating').innerText=`${p.rating} (${p.reviews} reviews)`;
-let off=p.old?Math.round((p.old-p.price)/p.old*100):0;
-document.getElementById('mPrice').innerHTML=`<span style="font-weight:900;font-size:20px">Rs. ${p.price}</span> ${p.old?`<span style="color:#999;text-decoration:line-through;margin-left:8px">Rs. ${p.old}</span><span style="background:#e11;color:#fff;padding:2px 8px;border-radius:20px;font-size:12px;margin-left:8px">-${off}% OFF</span>`:''}`;
-document.getElementById('thumbs').innerHTML=p.gallery.map((g,i)=>`<img src="${g}" class="${i==0?'active':''}" onclick="changeImg(this,'${g}')">`).join('');
-document.getElementById('modal').style.display='block';
-}
-function changeImg(el,src){document.getElementById('mainImg').src=src;document.querySelectorAll('.thumbs img').forEach(i=>i.classList.remove('active'));el.classList.add('active');}
-function closeM(){document.getElementById('modal').style.display='none';}
-</script>
-</body>
-</html>
+let cart=JSON.parse(localStorage.getItem('cart')||'[]');let current=null;
+function render(){document.getElementById('grid').innerHTML=products.map(p=>{let off=Math.round((p.old-p.price)/p.old*100);return `<div class="card" onclick="openDetail(${p.id})"><img src="${p.img}"><div class="info"><div class="name">${p.name}</div><div class="price">Rs. ${p.price}<span class="old">Rs. ${p.old}</span> <span style="font-size:9px;color:#d88a9a">-${off}%</span></div></div></div>`}).join('');upd();}
+render();
+function openDetail(id){let p=products.find(x=>x.id===id);current=p;document.getElementById('dImg').src=p.img;document.getElementById('dName').innerText=p.name;document.getElementById('dPrice').innerText='Rs. '+p.price;document.getElementById('dOld').innerText='Rs. '+p.old;document.getElementById('dOff').innerText='-'+Math.round((p.old-p.price)/p.old*100)+'%';document.getElementById('dInside').innerText=p.inside;document.getElementById('detail').classList.add('show');}
+function closeDetail(){document.getElementById('detail').classList.remove('show');}
+function addFromDetail(){if(current){add(current.id);closeDetail();}}
+function add(id){let ex=cart.find(c=>c.id===id);if(ex)ex.q++;else{let pr=products.find(x=>x.id===id);cart.push({...pr,q:1});}localStorage.setItem('cart',JSON.stringify(cart));upd();alert('Added to Bag!');}
+function upd(){document.getElementById('cnt').innerText=cart.reduce((s,c)=>s+c.q,0);}
+function showMessages(){document.getElementById('msgPage').classList.add('show');document.getElementById('profilePage').classList.remove('show');}
+function showProfile(){document.getElementById('profilePage').classList.add('show');document.getElementById('msgPage').classList.remove('show');}
+function showHome(){document.getElementById('msgPage').classList.remove('show');document.getElementById('profilePage').classList.remove('show');closeDetail();}
+function showCart(){if(!cart.length)return alert('Bag empty!');alert('Bag: '+cart.reduce((s,c)=>s+c.q,0)+' items');}
+</script></body></html>
