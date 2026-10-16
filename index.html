@@ -1,61 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeAlpha Store - Online Shopping</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#f5f5f5}
-header{background:#111;color:#fff;padding:15px;display:flex;justify-content:space-between;align-items:center}
-header h1{font-size:20px}
-nav a{color:#fff;margin-left:15px;text-decoration:none}
-.hero{background:linear-gradient(to right,#ff416c,#ff4b2b);color:#fff;padding:60px 20px;text-align:center}
-.hero h2{font-size:28px}
-.products{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:15px}
-.card{background:#fff;border-radius:10px;padding:10px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
-.card img{width:100%;height:120px;object-fit:cover;border-radius:8px}
-.card h3{font-size:16px;margin:10px 0 5px}
-.card p{color:#ff4b2b;font-weight:bold}
-.card button{background:#111;color:#fff;border:none;padding:8px 15px;border-radius:5px;margin-top:8px;width:100%}
-footer{background:#111;color:#fff;text-align:center;padding:15px;margin-top:20px}
-</style>
-</head>
-<body>
-<header>
-<h1>CodeAlpha Store</h1>
-<nav><a href="#">Home</a><a href="#">Cart (0)</a></nav>
-</header>
-<div class="hero">
-<h2>Big Sale - Up to 50% OFF</h2>
-<p>Best Online Shopping Store in Pakistan</p>
-</div>
-<div class="products">
-<div class="card">
-<img src="https://via.placeholder.com/200?text=Shoes">
-<h3>Running Shoes</h3>
-<p>Rs. 2,999</p>
-<button>Add to Cart</button>
-</div>
-<div class="card">
-<img src="https://via.placeholder.com/200?text=Watch">
-<h3>Smart Watch</h3>
-<p>Rs. 4,500</p>
-<button>Add to Cart</button>
-</div>
-<div class="card">
-<img src="https://via.placeholder.com/200?text=Headphone">
-<h3>Headphone</h3>
-<p>Rs. 1,999</p>
-<button>Add to Cart</button>
-</div>
-<div class="card">
-<img src="https://via.placeholder.com/200?text=T-Shirt">
-<h3>T-Shirt</h3>
-<p>Rs. 999</p>
-<button>Add to Cart</button>
-</div>
-</div>
-<footer>© 2026 CodeAlpha Ecommerce Store | Made for Internship</footer>
-</body>
-</html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CodeAlpha - 20 Products</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}body{background:#f8fafc}header{background:white;padding:14px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px #0001;position:sticky;top:0;z-index:100}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}.card{background:white;border-radius:12px;padding:12px;box-shadow:0 2px 8px #0001;cursor:pointer;position:relative}.card img{width:100%;height:150px;object-fit:contain}.price{font-weight:800;color:#16a34a}.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;justify-content:center;align-items:center;z-index:999;padding:15px}.modal.active{display:flex}.modal-box{background:white;border-radius:16px;max-width:950px;width:100%;max-height:90vh;overflow:auto;padding:20px}.variant-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}.variant-full{border:1px solid #e2e8f0;border-radius:12px;padding:12px;background:white}.variant-full img{width:100%;height:140px;object-fit:contain;border-radius:8px}.click-badge{position:absolute;top:8px;right:8px;background:#f59e0b;color:white;font-size:10px;padding:3px 7px;border-radius:10px;font-weight:800}.inbox{background:white;border-radius:16px;padding:20px;margin-top:30px;box-shadow:0 2px 10px #0001}.inbox input,.inbox textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;margin:8px 0}</style></head><body>
+<header><div style="font-weight:900">🔷 CodeAlpha 🇵🇰</div><div>🛒 <b id="cart">0</b> | 20 Products</div></header>
+<div style="padding:20px 5%"><div id="grid" class="grid"></div><div class="inbox"><h2>📩 Inbox</h2><input id="name" placeholder="Your Name"><input id="email" placeholder="Your Email"><textarea id="msg" rows="4" placeholder="Your Message..."></textarea><button onclick="sendMsg()" style="background:#2563eb;color:white;border:none;padding:12px;border-radius:8px;width:100%;font-weight:700">Send Message</button><p id="sent" style="display:none;color:green;text-align:center;margin-top:10px;font-weight:700">✅ Message Sent!</p></div></div>
+<div class="modal" id="modal" onclick="if(event.target==this)closeModal()"><div class="modal-box"><div style="display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding-bottom:12px;margin-bottom:15px"><div><h2 id="mTitle"></h2><p id="mSub" style="color:#888;font-size:13px"></p></div><div onclick="closeModal()" style="font-size:30px;cursor:pointer">×</div></div><div class="variant-grid" id="variantGrid"></div></div></div>
+<footer style="text-align:center;padding:20px;color:#888">© Zainab Asim • CA/DF1/316075 • 20 Products</footer>
+<script>
+const products=[
+{id:1,name:"Winter Clothes Box",price:"Rs. 2,499",img:"https://images.unsplash.com/photo-1608063615781-e2ef8c73d114?w=300",variants:[
+{name:"Fleece Hoodie Grey",price:"Rs. 1,499",old:"Rs. 1,999",rating:"⭐ 4.6 (120)",desc:"Unisex • Soft Fleece • Warm",img:"https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=300"},
+{name:"Puffer Jacket Black",price:"Rs. 3,299",old:"Rs. 4,500",rating:"⭐ 4.8 (89)",desc:"Waterproof • Quilted • Warm",img:"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300"},
+{name:"Wool Sweater Cream",price:"Rs. 1,749",old:"Rs. 2,200",rating:"⭐ 4.7 (65)",desc:"100% Wool • Crew Neck • Classic",img:"https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300"},
+{name:"Pashmina Shawl Green",price:"Rs. 1,350",old:"Rs. 1,800",rating:"⭐ 4.9 (210)",desc:"Traditional • Soft & Warm • 180x90cm",img:"https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=300"},
+{name:"Warm Beanie Yellow",price:"Rs. 599",old:"Rs. 899",rating:"⭐ 4.5 (150)",desc:"Ribbed Knit • Unisex • One Size",img:"https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=300"},
+{name:"Heavy Jacket Olive",price:"Rs. 2,899",old:"Rs. 3,500",rating:"⭐ 4.8 (78)",desc:"Faux Fur Hood • Padded • Coldproof",img:"https://images.unsplash.com/photo-1548126032-079a0fb0099d?w=300"}
+]},
+{id:2,name:"Laptop 15.6\"",price:"Rs. 89,999",img:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300",variants:[
+{name:"Silver 8GB/256GB i5",price:"Rs. 89,999",old:"Rs. 99,999",rating:"⭐ 4.7 (85)",desc:"Core i5 • 15.6\" FHD • 8H Battery",img:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300"},
+{name:"Grey 16GB/512GB i7",price:"Rs. 119,999",old:"Rs. 135,000",rating:"⭐ 4.9 (120)",desc:"Core i7 • 16GB RAM • 512GB SSD",img:"https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300"}
+]},
+{id:3,name:"Lunchbox Steel",price:"Rs. 1,250",img:"https://images.unsplash.com/photo-1544816155-12df9643f363?w=300",variants:[
+{name:"3 Compartment Silver",price:"Rs. 1,250",old:"Rs. 1,500",rating:"⭐ 4.5 (200)",desc:"Leakproof • 1200ml • Steel",img:"https://images.unsplash.com/photo-1544816155-12df9643f363?w=300"},
+{name:"4 Compartment Black",price:"Rs. 1,450",old:"Rs. 1,700",rating:"⭐ 4.6 (180)",desc:"4 Parts • Easy Clean • Premium",img:"https://images.unsplash.com/photo-1606851572622-3a9ed3ccb7c5?w=300"}
+]},
+{id:4,name:"Juicer Machine",price:"Rs. 6,499",img:"https://images.unsplash.com/photo-1570222095044-d0961a4ad49d?w=300",variants:[
+{name:"Cold Press Silver 700W",price:"Rs. 6,499",old:"Rs. 8,000",rating:"⭐ 4.4 (93)",desc:"700W • Easy Clean • 1L Jar",img:"https://images.unsplash.com/photo-1570222095044-d0961a4ad49d?w=300"},
+{name:"Mini White 500W",price:"Rs. 4,999",old:"Rs. 6,500",rating:"⭐ 4.3 (70)",desc:"Compact • 1L • Low
