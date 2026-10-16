@@ -35,11 +35,11 @@
 <div style="text-align:center;padding:16px;font-size:10px;color:#888">Zainab Collection • 14 Products • Halal Pics Only</div>
 <div class="modal" id="modal" onclick="if(event.target==this)closeM()"><div class="bx"><img class="m" id="mImg"><div class="pd"><div class="cl" onclick="closeM()">×</div><h3 id="mT" style="font-size:13px"></h3><p id="mD" style="font-size:11px;color:#666;margin-top:5px"></p><div style="margin-top:8px"><b id="mP"></b><span id="mO" style="font-size:10px;color:#999;text-decoration:line-through;margin-left:4px"></span></div><h4 style="font-size:11px;margin-top:10px">Isi Category ke 4 Designs:</h4><div class="op" id="opts"></div><button class="btn" onclick="addC()">Add to Cart</button></div></div></div>
 <script>
-const prods=[
-{id:1,cat:"abaya",n:"Black Front Open Abaya - Nida",p:3499,o:4599,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500",d:"Nida fabric • Hanger display • No model"},
-{id:2,cat:"abaya",n:"Brown Embroidered Abaya",p:3999,o:5299,img:"https://images.unsplash.com/photo-1582533561751-ef6f6ab93a2e?w=500",d:"Georgette • Folded • No person"},
-{id:3,cat:"abaya",n:"Navy Blue Plain Abaya",p:2999,o:3999,img:"https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=500",d:"Daily wear • Umbrella cut"},
-{id:4,cat:"abaya",n:"Beige Closed Abaya Belt",p:3699,o:4799,img:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500",d:"Closed with belt • Folded fabric"},
+const prods=[  
+{id:1,cat:"shoes",n:"Black Pump Shoes Closed",p:2499,o:3499,img:"https://via.placeholder.com/500/f3ede7/111111?text=Black+Pumps+Box+Only",d:"Product only - No feet - Box display"},
+{id:2,cat:"shoes",n:"Brown Khussa Embroidered",p:1899,o:2599,img:"https://via.placeholder.com/500/f3ede7/111111?text=Khussa+Product+Only",d:"Handmade - Product only - No human"},
+{id:3,cat:"shoes",n:"White Sneakers Girls",p:2999,o:3999,img:"https://via.placeholder.com/500/f3ede7/111111?text=Sneakers+Product+Only",d:"White background - No feet"},
+{id:4,cat:"shoes",n:"Beige Heel Block Heel",p:2799,o:3799,img:"https://via.placeholder.com/500/f3ede7/111111?text=Heels+Box+Only",d:"Box
 {id:5,cat:"hijab",n:"Chiffon Hijab Black Folded",p:599,o:899,img:"https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=500",d:"180cm • Folded stack"},
 {id:6,cat:"hijab",n:"Undercap Hijab 2pcs",p:399,o:600,img:"https://images.unsplash.com/photo-1620799139507-7156ec1c9e92?w=500",d:"Cotton undercap"},
 {id:7,cat:"hijab",n:"Georgette Hijab 3 Colors Set",p:1299,o:1899,img:"https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=500",d:"3 colors • Folded"},
@@ -48,7 +48,7 @@ const prods=[
 {id:10,cat:"bag",n:"School Backpack Black",p:1999,o:2799,img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",d:"Backpack only"},
 {id:11,cat:"accessories",n:"Hijab Pins Box 50pcs",p:450,o:700,img:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500",d:"Box only"},
 {id:12,cat:"accessories",n:"Silver Anklet Box",p:599,o:899,img:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500",d:"Box display • No feet"},
-{id:13,cat:"accessories",n:"Pearl Necklace Velvet Box",p:2499,o:3499,img:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500",d:"Velvet box • No neck"},
+{id:13,cat:"lunchbox",n:"Kids Steel Lunch Box Pink",p:1499,o:2199,img:"https://via.placeholder.com/500/f3ede7/111111?text=Lunch+Box+Product+Only",d:"Steel lunch box - No human"},
 {id:14,cat:"accessories",n:"Brown Leather Wallet",p:899,o:1299,img:"https://images.unsplash.com/photo-1627123424574-724758594e93?w=500",d:"Wallet with box"}
 ];
 let cur=null,sel=null,cart=0;
