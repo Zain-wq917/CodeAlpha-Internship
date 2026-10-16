@@ -1,136 +1,70 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZAINAB COLLECTION</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#fdfbf9}
-.h{padding:10px;background:#fff;position:sticky;top:0;z-index:9;border-bottom:1px solid #eee}
-.hh{display:flex;justify-content:space-between}
-.s{margin-top:6px;display:flex;gap:4px}
-.s input{flex:1;padding:8px;border:1px solid #111;border-radius:8px}
-.s button{padding:8px 10px;background:#111;color:#fff;border:none;border-radius:8px}
-.g{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}
-.c{background:#fff;border-radius:8px;border:1px solid #eee;overflow:hidden}
-.c img{width:100%;height:120px;object-fit:cover}
-.i{padding:5px}
-.n{font-size:10px;font-weight:800;min-height:20px}
-.pr{font-size:10px;font-weight:900}
-.m{display:none;position:fixed;inset:0;background:#0006;z-index:99;padding:8px}
-.b{background:#fff;border-radius:10px;max-width:600px;margin:auto}
-.b>img{width:100%;height:200px;object-fit:contain}
-.pd{padding:8px;position:relative}
-.cl{position:absolute;top:4px;right:4px;background:#eee;padding:5px;cursor:pointer}
-.op{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-top:5px}
-.o{border:1px solid #eee;border-radius:6px;padding:4px;text-align:center;cursor:pointer}
-.o.sel{border-color:#111;background:#fef2e8}
-.o img{width:100%;height:40px;object-fit:contain}
-.btn{width:100%;padding:8px;background:#111;color:#fff;border:none;border-radius:6px;margin-top:6px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}body{background:#faf9f7}
+.h{padding:12px;background:#fff;display:flex;justify-content:space-between;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
+.s{padding:10px;background:#fff;position:sticky;top:54px;z-index:9;border-bottom:1px solid #eee;display:flex;gap:6px}
+.s input{flex:1;padding:10px;border:1px solid #111;border-radius:10px}
+.s button{padding:10px 14px;background:#111;color:#fff;border:none;border-radius:10px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
+@media(min-width:700px){.g{grid-template-columns:repeat(4,1fr)}}
+.c{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #eee;cursor:pointer}
+.c img{width:100%;height:170px;object-fit:cover;background:#f3ede7}
+.i{padding:8px}.n{font-size:12px;font-weight:700;height:34px;overflow:hidden;line-height:1.3}
+.pr{font-weight:900;font-size:13px;margin-top:4px}.ol{font-size:10px;color:#999;text-decoration:line-through;margin-left:4px}
+.modal{display:none;position:fixed;inset:0;background:#0008;z-index:99;padding:10px;overflow-y:auto}
+.bx{background:#fff;border-radius:16px;max-width:850px;margin:20px auto;overflow:hidden;display:grid}
+@media(min-width:700px){.bx{grid-template-columns:1fr 1fr}}
+.bx img.m{width:100%;height:320px;object-fit:cover}.pd{padding:14px;position:relative}
+.cl{position:absolute;top:8px;right:8px;background:#fff;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;cursor:pointer}
+.op{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+.o{border:1px solid #eee;border-radius:10px;padding:6px;cursor:pointer}.o.sel{border-color:#111;background:#fdf6f2}
+.o img{width:100%;height:60px;object-fit:cover;border-radius:6px}
+.btn{width:100%;padding:12px;background:#111;color:#fff;border:none;border-radius:10px;margin-top:12px;font-weight:700}
 </style>
 </head>
 <body>
-<div class="h">
-<div class="hh"><b>ZAINAB COLLECTION</b><span>🛒 <b id="ct">0</b></span></div>
-<div class="s"><input id="q" placeholder="Search products..." oninput="searchP()"><button onclick="searchP()">Search</button></div>
-</div>
-<div class="g" id="grid">
-<div class="c" data-name="caps" onclick="oP(2)"><img src="https://placehold.co/300x300/222/fff?text=Caps"><div class="i"><div class="n">Caps Front</div><div class="pr">Rs699</div></div></div>
-<div class="c" data-name="shoes" onclick="oP(3)"><img src="https://placehold.co/300x300/111/fff?text=Shoes"><div class="i"><div class="n">Shoes Box</div><div class="pr">Rs1899</div></div></div>
-<div class="c" data-name="bottle" onclick="oP(4)"><img src="https://placehold.co/300x300/aaa/000?text=Bottle"><div class="i"><div class="n">Steel Bottle</div><div class="pr">Rs899</div></div></div>
-<div class="c" data-name="laptop" onclick="oP(5)"><img src="https://placehold.co/300x300/eee/000?text=Laptop"><div class="i"><div class="n">Laptop</div><div class="pr">Rs84999</div></div></div>
-<div class="c" data-name="bag" onclick="oP(6)"><img src="https://placehold.co/300x300/111/fff?text=School+Bag"><div class="i"><div class="n">School Bag</div><div class="pr">Rs1999</div></div></div>
-<div class="c" data-name="lunch" onclick="oP(7)"><img src="https://placehold.co/300x300/aaa/000?text=Lunch+Box"><div class="i"><div class="n">Lunch Box</div><div class="pr">Rs1299</div></div></div>
-<div class="c" data-name="chair" onclick="oP(8)"><img src="https://placehold.co/300x300/222/fff?text=Chair"><div class="i"><div class="n">Chair</div><div class="pr">Rs8999</div></div></div>
-<div class="c" data-name="bartan" onclick="oP(9)"><img src="https://placehold.co/300x300/aaa/000?text=Bartan"><div class="i"><div class="n">Steel Bartan Set</div><div class="pr">Rs2499</div></div></div>
-<div class="c" data-name="cloth" onclick="oP(10)"><img src="https://placehold.co/300x300/f5f5dc/000?text=Clothes"><div class="i"><div class="n">Cloth Bundle</div><div class="pr">Rs1299</div></div></div>  
-<div class="m" id="modal" onclick="if(event.target===this)cM()">
-<div class="b">
-<img id="mImg" src="" alt="Product">
-<div class="pd">
-<div class="cl" onclick="cM()">Close ×</div>
-<h3 id="mT"></h3>
-<div id="mP"></div>
-<p style="margin-top:8px">Choose an option:</p>
-<div class="op" id="opts"></div>
-<button class="btn" onclick="aC()">Add to Cart</button>
-</div>
-</div>
-</div>
-
+<div class="h"><div><b>ZAINAB COLLECTION</b><div style="font-size:10px;color:#777">ID: CA/DF1/316075 • No human pic</div></div><div>🛒<b id="cart">0</b></div></div>
+<div class="s"><input id="q" placeholder="Search Abaya Hijab Bag..." oninput="searchP()"><button onclick="searchP()">Search</button></div>
+<div class="g" id="grid"></div>
+<div style="text-align:center;padding:16px;font-size:10px;color:#888">Zainab Collection • 20 Products • Halal Pics Only • By Zainab Asim</div>
+<div class="modal" id="modal" onclick="if(event.target==this)closeM()"><div class="bx"><img class="m" id="mImg"><div class="pd"><div class="cl" onclick="closeM()">×</div><h3 id="mT" style="font-size:13px"></h3><p id="mD" style="font-size:11px;color:#666;margin-top:5px"></p><div style="margin-top:8px"><b id="mP"></b><span id="mO" style="font-size:10px;color:#999;text-decoration:line-through;margin-left:4px"></span></div><h4 style="font-size:11px;margin-top:10px">Andar 4 options alag Rs:</h4><div class="op" id="opts"></div><button class="btn" onclick="addC()">Add to Cart</button></div></div></div>
 <script>
-var P=[
-{id:2,n:"Caps",img:"https://placehold.co/300x300/222/fff?text=Caps",p:699},
-{id:3,n:"Shoes",img:"https://placehold.co/300x300/111/fff?text=Shoes",p:1899},
-{id:4,n:"Steel Bottle",img:"https://placehold.co/300x300/aaa/000?text=Bottle",p:899},
-{id:5,n:"Laptop",img:"https://placehold.co/300x300/eee/000?text=Laptop",p:84999},
-{id:6,n:"School Bag",img:"https://placehold.co/300x300/111/fff?text=School+Bag",p:1999},
-{id:7,n:"Lunch Box",img:"https://placehold.co/300x300/aaa/000?text=Lunch+Box",p:1299},
-{id:8,n:"Chair",img:"https://placehold.co/300x300/222/fff?text=Chair",p:8999},
-{id:9,n:"Steel Bartan Set",img:"https://placehold.co/300x300/aaa/000?text=Bartan",p:2499},
-{id:10,n:"Cloth Bundle",img:"https://placehold.co/300x300/f5f5dc/000?text=Clothes",p:1299}
-];
-
-var cur=null,sel=null,cart=0;
-
-function searchP(){
-var q=document.getElementById("q").value.toLowerCase();
-var cs=document.querySelectorAll(".c");
-for(var i=0;i<cs.length;i++){
-cs[i].style.display=cs[i].getAttribute("data-name").includes(q)?"block":"none";
-}
-}
-
-function oP(id){
-cur=P.find(function(x){return x.id===id});
-if(!cur)return;
-sel=null;
-document.getElementById("mT").innerText=cur.n;
-document.getElementById("mImg").src=cur.img;
-document.getElementById("mP").innerText="Rs. "+cur.p;
-var V=[
-{l:"Option 1",pr:cur.p},
-{l:"Option 2",pr:cur.p+100},
-{l:"Option 3",pr:cur.p+200}
-];
-if(cur.id===5){
-V=[
-{l:"i5 / 8GB",pr:84999},
-{l:"i5 / 16GB",pr:94999},
-{l:"i7 / 16GB",pr:114999}
-];
-}
-var h="";
-for(var j=0;j<V.length;j++){
-h+='<div class="o" id="o'+j+'" onclick="pick('+j+','+V[j].pr+')"><img src="'+cur.img+'" alt=""><div>'+V[j].l+'</div><div>Rs. '+V[j].pr+'</div></div>';
-}
-document.getElementById("opts").innerHTML=h;
-document.getElementById("modal").style.display="block";
-}
-
-function pick(i,pr){
-var os=document.querySelectorAll(".o");
-for(var k=0;k<os.length;k++)os[k].classList.remove("sel");
-document.getElementById("o"+i).classList.add("sel");
-sel=pr;
-document.getElementById("mP").innerText="Rs. "+pr;
-}
-
-function cM(){
-document.getElementById("modal").style.display="none";
-}
-
-function aC(){
-if(!cur)return;
-if(sel===null)sel=cur.p;
-cart++;
-document.getElementById("ct").innerText=cart;
-alert(cur.n+" - Rs. "+sel+" added to cart");
-cM();
-}
+const prods=[
+{id:1,n:"Black Front Open Abaya - Nida",p:3499,o:4599,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500",d:"Nida fabric • Hanger display • No model • Halal"},
+{id:2,n:"Brown Embroidered Abaya",p:3999,o:5299,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500",d:"Georgette • Folded • No person"},
+{id:3,n:"Navy Blue Plain Abaya",p:2999,o:3999,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500",d:"Daily wear • Umbrella cut • Hanger only"},
+{id:4,n:"Beige Closed Abaya Belt",p:3699,o:4799,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500",d:"Closed with belt • Folded fabric"},
+{id:5,n:"Grey Turkish Umbrella Abaya",p:4299,o:5599,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500",d:"Turkish style • Fabric only"},
+{id:6,n:"Black Butterfly Front Close",p:3799,o:4899,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500",d:"Butterfly cut • Front closed • No model"},
+{id:7,n:"Chiffon Hijab Black Folded",p:599,o:899,img:"https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=500",d:"180cm • Folded stack • No person"},
+  {id:8,n:"Hijab Pins Box 50pcs",p:450,o:700,img:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500",d:"Box only • Product only"},
+{id:9,n:"Undercap Hijab 2pcs",p:399,o:600,img:"https://images.unsplash.com/photo-1620799139507-7156ec1c9e92?w=500",d:"Cotton undercap • Folded"},
+{id:10,n:"Georgette Hijab 3 Colors Set",p:1299,o:1899,img:"https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=500",d:"3 colors • Folded display"},
+{id:11,n:"PU Leather Tote Bag Black",p:3299,o:4299,img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500",d:"Only bag • No hand • Studio"},
+{id:12,n:"Hand Clutch Beige Embroidered",p:1499,o:2199,img:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500",d:"Clutch • Product only"},
+{id:13,n:"School Backpack Black Waterproof",p:1999,o:2799,img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",d:"Backpack only • Front samne"},
+{id:14,n:"Brown Leather Wallet Gents",p:899,o:1299,img:"https://images.unsplash.com/photo-1627123424574-724758594e93?w=500",d:"Wallet with box • Product only"},
+{id:15,n:"Silver Anklet Box Display",p:599,o:899,img:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500",d:"Box display • No feet"},
+{id:16,n:"Pearl Necklace Velvet Box",p:2499,o:3499,img:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500",d:"Velvet box • No neck"},
+{id:17,n:"Bracelet Box Gold Plated",p:699,o:999,img:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500",d:"Box only • No hand"},
+{id:18,n:"Matte Lipstick Set 6 Colors",p:1299,o:1999,img:"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",d:"Flat lay • No lips • Product only"},
+{id:19,n:"Face Serum Bottle 30ml",p:1599,o:2299,img:"https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500",d:"Bottle only • No face"},
+{id:20,n:"Travel Duffel Bag Large",p:3999,o:4999,img:"https://images.unsplash.com/photo-1546938576-6e6a64f45801?w=500",d:"Bag only • No person"},
+let cur=null,sel=null,cart=0;
+function render(list=prods){let h="";list.forEach(p=>{h+=`<div class="c" data-name="${p.n.toLowerCase()}" onclick="openP(${p.id})"><img src="${p.img}" loading="lazy"><div class="i"><div class="n">${p.n}</div><div class="pr">Rs. ${p.p}<span class="ol">Rs. ${p.o}</span></div></div></div>`});document.getElementById('grid').innerHTML=h;}
+function searchP(){let q=document.getElementById('q').value.toLowerCase();if(!q){render();return;}let f=prods.filter(p=>p.n.toLowerCase().includes(q));render(f);}
+function openP(id){cur=prods.find(x=>x.id==id);document.getElementById('mT').innerText=cur.n;document.getElementById('mD').innerText=cur.d;document.getElementById('mImg').src=cur.img;document.getElementById('mP').innerText="Rs. "+cur.p;document.getElementById('mO').innerText="Rs. "+cur.o;
+let opts=[{l:"Standard",pr:cur.p,im:cur.img},{l:"With Lining",pr:cur.p+350,im:cur.img},{l:"Embroidered",pr:cur.p+800,im:cur.img},{l:"Full Set + Hijab",pr:cur.p+1200,im:cur.img}];
+let oh="";opts.forEach((o,i)=>{oh+=`<div class="o" id="o${i}" onclick="pick(${i},${o.pr})"><img src="${o.im}"><div style="font-size:10px;font-weight:700;margin-top:3px">${o.l}</div><div style="font-size:10px;font-weight:800">Rs. ${o.pr}</div></div>`});
+document.getElementById('opts').innerHTML=oh;sel=null;document.getElementById('modal').style.display="block";}
+function pick(i,pr){document.querySelectorAll('.o').forEach(e=>e.classList.remove('sel'));document.getElementById('o'+i).classList.add('sel');sel=pr;document.getElementById('mP').innerText="Rs. "+pr;}
+function closeM(){document.getElementById('modal').style.display="none";}
+function addC(){if(!sel)sel=cur.p;cart++;document.getElementById('cart').innerText=cart;alert(cur.n+"\nRs. "+sel+" - Added\nJazakAllah!");closeM();}
+render();
 </script>
 </body>
-  </html>
-  
+</html>
