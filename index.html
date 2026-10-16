@@ -1,22 +1,136 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ZAINAB</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}body{background:#fdfbf9}.h{padding:10px;background:#fff;position:sticky;top:0;z-index:9;border-bottom:1px solid #eee}.hh{display:flex;justify-content:space-between}.s{margin-top:6px;display:flex;gap:4px}.s input{flex:1;padding:8px;border:1px solid #111;border-radius:8px}.s button{padding:8px 10px;background:#111;color:#fff;border:none;border-radius:8px}.g{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}.c{background:#fff;border-radius:8px;border:1px solid #eee;overflow:hidden}.c img{width:100%;height:120px;object-fit:cover}.i{padding:5px}.n{font-size:8px;font-weight:800;height:20px;overflow:hidden}.pr{font-size:9px;font-weight:900}.m{display:none;position:fixed;inset:0;background:#0006;z-index:99;padding:8px}.b{background:#fff;border-radius:10px;max-width:600px;margin:auto;display:grid}.b img{width:100%;height:240px;object-fit:cover}.pd{padding:8px;position:relative}.cl{position:absolute;top:4px;right:4px;background:#fff;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;cursor:pointer}.op{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-top:5px}.o{border:1px solid #eee;border-radius:6px;padding:4px;text-align:center;cursor:pointer}.o.sel{border-color:#111;background:#fef2e8}.o img{width:100%;height:40px;object-fit:cover}.btn{width:100%;padding:8px;background:#111;color:#fff;border:none;border-radius:6px;margin-top:6px}</style></head><body>
-<div class="h"><div class="hh"><b>ZAINAB COLLECTION</b><span>🛒<b id="ct">0</b></span></div><div class="s"><input id="q" placeholder="Search Laptop Bag..." oninput="searchP()"><button onclick="searchP()">Search</button></div></div>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ZAINAB COLLECTION</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#fdfbf9}
+.h{padding:10px;background:#fff;position:sticky;top:0;z-index:9;border-bottom:1px solid #eee}
+.hh{display:flex;justify-content:space-between}
+.s{margin-top:6px;display:flex;gap:4px}
+.s input{flex:1;padding:8px;border:1px solid #111;border-radius:8px}
+.s button{padding:8px 10px;background:#111;color:#fff;border:none;border-radius:8px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}
+.c{background:#fff;border-radius:8px;border:1px solid #eee;overflow:hidden}
+.c img{width:100%;height:120px;object-fit:cover}
+.i{padding:5px}
+.n{font-size:10px;font-weight:800;min-height:20px}
+.pr{font-size:10px;font-weight:900}
+.m{display:none;position:fixed;inset:0;background:#0006;z-index:99;padding:8px}
+.b{background:#fff;border-radius:10px;max-width:600px;margin:auto}
+.b>img{width:100%;height:200px;object-fit:contain}
+.pd{padding:8px;position:relative}
+.cl{position:absolute;top:4px;right:4px;background:#eee;padding:5px;cursor:pointer}
+.op{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-top:5px}
+.o{border:1px solid #eee;border-radius:6px;padding:4px;text-align:center;cursor:pointer}
+.o.sel{border-color:#111;background:#fef2e8}
+.o img{width:100%;height:40px;object-fit:contain}
+.btn{width:100%;padding:8px;background:#111;color:#fff;border:none;border-radius:6px;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="h">
+<div class="hh"><b>ZAINAB COLLECTION</b><span>🛒 <b id="ct">0</b></span></div>
+<div class="s"><input id="q" placeholder="Search products..." oninput="searchP()"><button onclick="searchP()">Search</button></div>
+</div>
 <div class="g" id="grid">
-<div class="c" data-name="caps"><div onclick="oP(2)"><img src="https://placehold.co/300x300/222/fff?text=Caps"><div class="i"><div class="n">Caps Front</div><div class="pr">Rs699 | Stock:35 | 30% OFF</div></div></div></div>
-<div class="c" data-name="shoes"><div onclick="oP(3)"><img src="https://placehold.co/300x300/111/fff?text=Shoes"><div class="i"><div class="n">Shoes Box</div><div class="pr">Rs1899 | Stock:18 | 29% OFF</div></div></div></div>
-<div class="c" data-name="bottle"><div onclick="oP(4)"><img src="https://placehold.co/300x300/aaa/000?text=Bottle"><div class="i"><div class="n">Bottle Steel 1L</div><div class="pr">Rs899 | Stock:50 | 30% OFF</div></div></div></div>
-<div class="c" data-name="laptop"><div onclick="oP(5)"><img src="https://placehold.co/300x300/eee/000?text=Laptop+Front"><div class="i"><div class="n">Laptop Front Samne</div><div class="pr">Rs84999 | Stock:6 | 15% OFF</div></div></div></div>
-<div class="c" data-name="bag"><div onclick="oP(6)"><img src="https://placehold.co/300x300/111/fff?text=Bag+Front"><div class="i"><div class="n">School Bag Front Samne</div><div class="pr">Rs1999 | Stock:28 | 28% OFF</div></div></div></div>
-<div class="c" data-name="lunch"><div onclick="oP(7)"><img src="https://placehold.co/300x300/aaa/000?text=Lunch"><div class="i"><div class="n">Lunch Box Steel</div><div class="pr">Rs1299 | Stock:45 | 31% OFF</div></div></div></div>
-<div class="c" data-name="chair"><div onclick="oP(8)"><img src="https://placehold.co/300x300/222/fff?text=Chair"><div class="i"><div class="n">Chair Front</div><div class="pr">Rs8999 | Stock:9 | 30% OFF</div></div></div></div>
-<div class="c" data-name="bartan"><div onclick="oP(9)"><img src="https://placehold.co/300x300/aaa/000?text=Bartan"><div class="i"><div class="n">Bartan Steel Set</div><div class="pr">Rs2499 | Stock:25 | 28% OFF</div></div></div></div>
-<div class="c" data-name="cloth"><div onclick="oP(10)"><img src="https://placehold.co/300x300/f5f5dc/000?text=Cloth"><div class="i"><div class="n">Cloth Bundle</div><div class="pr">Rs1299 | Stock:40 | 31% OFF</div></div></div></div>
-</div><div class="m" id="modal" onclick="if(event.target==this)cM()"><div class="b"><img id="mImg"><div class="pd"><div class="cl" onclick="cM()">×</div><h3 id="mT" style="font-size:11px"></h3><div id="mP" style="font-size:10px;font-weight:800;margin-top:4px"></div><div style="font-size:8px;margin-top:6px">Andar 3 alag Rs alag:</div><div class="op" id="opts"></div><button class="btn" onclick="aC()">Add to Cart</button></div></div></div>
+<div class="c" data-name="caps" onclick="oP(2)"><img src="https://placehold.co/300x300/222/fff?text=Caps"><div class="i"><div class="n">Caps Front</div><div class="pr">Rs699</div></div></div>
+<div class="c" data-name="shoes" onclick="oP(3)"><img src="https://placehold.co/300x300/111/fff?text=Shoes"><div class="i"><div class="n">Shoes Box</div><div class="pr">Rs1899</div></div></div>
+<div class="c" data-name="bottle" onclick="oP(4)"><img src="https://placehold.co/300x300/aaa/000?text=Bottle"><div class="i"><div class="n">Steel Bottle</div><div class="pr">Rs899</div></div></div>
+<div class="c" data-name="laptop" onclick="oP(5)"><img src="https://placehold.co/300x300/eee/000?text=Laptop"><div class="i"><div class="n">Laptop</div><div class="pr">Rs84999</div></div></div>
+<div class="c" data-name="bag" onclick="oP(6)"><img src="https://placehold.co/300x300/111/fff?text=School+Bag"><div class="i"><div class="n">School Bag</div><div class="pr">Rs1999</div></div></div>
+<div class="c" data-name="lunch" onclick="oP(7)"><img src="https://placehold.co/300x300/aaa/000?text=Lunch+Box"><div class="i"><div class="n">Lunch Box</div><div class="pr">Rs1299</div></div></div>
+<div class="c" data-name="chair" onclick="oP(8)"><img src="https://placehold.co/300x300/222/fff?text=Chair"><div class="i"><div class="n">Chair</div><div class="pr">Rs8999</div></div></div>
+<div class="c" data-name="bartan" onclick="oP(9)"><img src="https://placehold.co/300x300/aaa/000?text=Bartan"><div class="i"><div class="n">Steel Bartan Set</div><div class="pr">Rs2499</div></div></div>
+<div class="c" data-name="cloth" onclick="oP(10)"><img src="https://placehold.co/300x300/f5f5dc/000?text=Clothes"><div class="i"><div class="n">Cloth Bundle</div><div class="pr">Rs1299</div></div></div>  
+<div class="m" id="modal" onclick="if(event.target===this)cM()">
+<div class="b">
+<img id="mImg" src="" alt="Product">
+<div class="pd">
+<div class="cl" onclick="cM()">Close ×</div>
+<h3 id="mT"></h3>
+<div id="mP"></div>
+<p style="margin-top:8px">Choose an option:</p>
+<div class="op" id="opts"></div>
+<button class="btn" onclick="aC()">Add to Cart</button>
+</div>
+</div>
+</div>
+
 <script>
-var P=[{id:2,n:"Caps",img:"https://placehold.co/300x300/222/fff?text=Caps",p:699},{id:3,n:"Shoes",img:"https://placehold.co/300x300/111/fff?text=Shoes",p:1899},{id:4,n:"Bottle",img:"https://placehold.co/300x300/aaa/000?text=Bottle",p:899},{id:5,n:"Laptop Front Samne",img:"https://placehold.co/300x300/eee/000?text=Laptop+Front",p:84999},{id:6,n:"Bag Front Samne",img:"https://placehold.co/300x300/111/fff?text=Bag+Front",p:1999},{id:7,n:"Lunch Box",img:"https://placehold.co/300x300/aaa/000?text=Lunch",p:1299},{id:8,n:"Chair Front",img:"https://placehold.co/300x300/222/fff?text=Chair",p:8999},{id:9,n:"Bartan Set",img:"https://placehold.co/300x300/aaa/000?text=Bartan",p:2499},{id:10,n:"Cloth",img:"https://placehold.co/300x300/f5f5dc/000?text=Cloth",p:1299}];
+var P=[
+{id:2,n:"Caps",img:"https://placehold.co/300x300/222/fff?text=Caps",p:699},
+{id:3,n:"Shoes",img:"https://placehold.co/300x300/111/fff?text=Shoes",p:1899},
+{id:4,n:"Steel Bottle",img:"https://placehold.co/300x300/aaa/000?text=Bottle",p:899},
+{id:5,n:"Laptop",img:"https://placehold.co/300x300/eee/000?text=Laptop",p:84999},
+{id:6,n:"School Bag",img:"https://placehold.co/300x300/111/fff?text=School+Bag",p:1999},
+{id:7,n:"Lunch Box",img:"https://placehold.co/300x300/aaa/000?text=Lunch+Box",p:1299},
+{id:8,n:"Chair",img:"https://placehold.co/300x300/222/fff?text=Chair",p:8999},
+{id:9,n:"Steel Bartan Set",img:"https://placehold.co/300x300/aaa/000?text=Bartan",p:2499},
+{id:10,n:"Cloth Bundle",img:"https://placehold.co/300x300/f5f5dc/000?text=Clothes",p:1299}
+];
+
 var cur=null,sel=null,cart=0;
-function searchP(){var q=document.getElementById('q').value.toLowerCase();var cs=document.querySelectorAll('.c');for(var i=0;i<cs.length;i++){var n=cs[i].getAttribute('data-name');cs[i].style.display=n.includes(q)?"block":"none"}}
-function oP(id){for(var i=0;i<P.length;i++){if(P[i].id==id){cur=P[i];break}}document.getElementById('mT').innerText=cur.n;document.getElementById('mImg').src=cur.img;document.getElementById('mP').innerText="Rs."+cur.p;var V=[];if(cur.id==2){V=[{l:"Black",pr:699},{l:"White",pr:749},{l:"Beige",pr:799}]}else if(cur.id==5){V=[{l:"i5/8/256",pr:84999},{l:"i5/16/512",pr:94999},{l:"i7/16/512",pr:114999}]}else if(cur.id==6){V=[{l:"Black S",pr:1999},{l:"Black L",pr:2399},{l:"Blue M",pr:2199}]}else{V=[{l:"D1",pr:cur.p},{l:"D2",pr:cur.p+100},{l:"D3",pr:cur.p+200}]}var h="";for(var j=0;j<V.length;j++){h+='<div class="o" id="o'+j+'" onclick="pick('+j+','+V[j].pr+')"><img src="'+cur.img+'"><div style="font-size:7px;font-weight:800">'+V[j].l+'</div><div style="font-size:8px;font-weight:800">Rs'+V[j].pr+'</div></div>'}document.getElementById('opts').innerHTML=h;sel=null;document.getElementById('modal').style.display="block"}
-function pick(i,pr){var os=document.querySelectorAll('.o');for(var k=0;k<os.length;k++){os[k].classList.remove('sel')}document.getElementById('o'+i).classList.add('sel');sel=pr;document.getElementById('mP').innerText="Rs."+pr}
-function cM(){document.getElementById('modal').style.display="none"}
-function aC(){if(!sel)sel=cur.p;cart++;document.getElementById('ct').innerText=cart;alert(cur.n+" Rs"+sel+" Added");cM()}
-</script></body></html>
+
+function searchP(){
+var q=document.getElementById("q").value.toLowerCase();
+var cs=document.querySelectorAll(".c");
+for(var i=0;i<cs.length;i++){
+cs[i].style.display=cs[i].getAttribute("data-name").includes(q)?"block":"none";
+}
+}
+
+function oP(id){
+cur=P.find(function(x){return x.id===id});
+if(!cur)return;
+sel=null;
+document.getElementById("mT").innerText=cur.n;
+document.getElementById("mImg").src=cur.img;
+document.getElementById("mP").innerText="Rs. "+cur.p;
+var V=[
+{l:"Option 1",pr:cur.p},
+{l:"Option 2",pr:cur.p+100},
+{l:"Option 3",pr:cur.p+200}
+];
+if(cur.id===5){
+V=[
+{l:"i5 / 8GB",pr:84999},
+{l:"i5 / 16GB",pr:94999},
+{l:"i7 / 16GB",pr:114999}
+];
+}
+var h="";
+for(var j=0;j<V.length;j++){
+h+='<div class="o" id="o'+j+'" onclick="pick('+j+','+V[j].pr+')"><img src="'+cur.img+'" alt=""><div>'+V[j].l+'</div><div>Rs. '+V[j].pr+'</div></div>';
+}
+document.getElementById("opts").innerHTML=h;
+document.getElementById("modal").style.display="block";
+}
+
+function pick(i,pr){
+var os=document.querySelectorAll(".o");
+for(var k=0;k<os.length;k++)os[k].classList.remove("sel");
+document.getElementById("o"+i).classList.add("sel");
+sel=pr;
+document.getElementById("mP").innerText="Rs. "+pr;
+}
+
+function cM(){
+document.getElementById("modal").style.display="none";
+}
+
+function aC(){
+if(!cur)return;
+if(sel===null)sel=cur.p;
+cart++;
+document.getElementById("ct").innerText=cart;
+alert(cur.n+" - Rs. "+sel+" added to cart");
+cM();
+}
+</script>
+</body>
+  </html>
+  
