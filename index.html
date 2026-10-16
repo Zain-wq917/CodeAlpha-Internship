@@ -1,52 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ZAINAB COLLECTION</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#fdfbf9}.h{padding:14px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
-.hh{display:flex;justify-content:space-between;align-items:center}
-.search{margin-top:10px;display:flex;gap:6px}
-.search input{flex:1;padding:10px 12px;border:1.6px solid #111;border-radius:10px;font-size:12px}
-.search button{padding:10px 14px;background:#111;color:#fff;border:none;border-radius:10px;font-weight:800}
-.g{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
-.c{background:#fff;border-radius:12px;overflow:hidden;border:1px solid #eee;cursor:pointer}
-.c img{width:100%;height:160px;object-fit:cover;background:#f3ece6}
-.i{padding:7px}.cat{font-size:7px;background:#111;color:#fff;padding:3px 6px;border-radius:20px;display:inline-block;font-weight:700}
-.n{font-size:10px;font-weight:800;height:26px;overflow:hidden;line-height:1.2}
-.pr{font-size:11px;font-weight:900}.ol{font-size:8px;color:#999;text-decoration:line-through;margin-left:2px}
-.count{font-size:7px;color:#0a7a2a;background:#e8f5e9;padding:2px 5px;border-radius:8px;margin-left:3px;font-weight:700}
-.dis{font-size:7px;background:#ff3b30;color:#fff;padding:2px 5px;border-radius:8px;margin-left:3px;font-weight:800}
-.m{display:none;position:fixed;inset:0;background:#0008;z-index:99;padding:10px;overflow:auto}
-.b{background:#fff;border-radius:14px;max-width:800px;margin:auto;overflow:hidden;display:grid}
-@media(min-width:700px){.b{grid-template-columns:1fr 1fr}}
-.b img.main{width:100%;height:320px;object-fit:cover;background:#f3ece6}
-.pd{padding:12px;position:relative}.cl{position:absolute;top:8px;right:8px;background:#fff;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;cursor:pointer;font-weight:900}
-.op{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
-.o{border:1.5px solid #eee;border-radius:10px;padding:6px;cursor:pointer}
-.o.sel{border-color:#111;background:#fdf6f2}
-.o img{width:100%;height:45px;object-fit:cover;border-radius:5px;background:#f3ece6}
-.btn{width:100%;padding:11px;background:#111;color:#fff;border:none;border-radius:10px;margin-top:10px;font-weight:800}
-</style>
-</head>
-<body>
-<div class="h">
-<div class="hh"><div><b>ZAINAB COLLECTION</b><div style="font-size:9px;color:#777">ID: CA/DF1/316075</div></div><div>🛒 <b id="ct">0</b></div></div>
-<div class="search"><input id="q" placeholder="Search: Abaya, Laptop, Chair, Bottle..." oninput="searchP()"><button onclick="searchP()">Search</button></div>
-</div>
-
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ZAINAB</title><style>*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}body{background:#fdfbf9}.h{padding:10px;background:#fff;position:sticky;top:0;z-index:9;border-bottom:1px solid #eee}.hh{display:flex;justify-content:space-between}.s{margin-top:6px;display:flex;gap:4px}.s input{flex:1;padding:8px;border:1px solid #111;border-radius:8px}.s button{padding:8px 10px;background:#111;color:#fff;border:none;border-radius:8px}.g{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:6px}.c{background:#fff;border-radius:8px;border:1px solid #eee;overflow:hidden}.c img{width:100%;height:120px;object-fit:cover}.i{padding:5px}.n{font-size:8px;font-weight:800;height:20px;overflow:hidden}.pr{font-size:9px;font-weight:900}.m{display:none;position:fixed;inset:0;background:#0006;z-index:99;padding:8px}.b{background:#fff;border-radius:10px;max-width:600px;margin:auto;display:grid}.b img{width:100%;height:240px;object-fit:cover}.pd{padding:8px;position:relative}.cl{position:absolute;top:4px;right:4px;background:#fff;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;cursor:pointer}.op{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-top:5px}.o{border:1px solid #eee;border-radius:6px;padding:4px;text-align:center;cursor:pointer}.o.sel{border-color:#111;background:#fef2e8}.o img{width:100%;height:40px;object-fit:cover}.btn{width:100%;padding:8px;background:#111;color:#fff;border:none;border-radius:6px;margin-top:6px}</style></head><body>
+<div class="h"><div class="hh"><b>ZAINAB COLLECTION</b><span>🛒<b id="ct">0</b></span></div><div class="s"><input id="q" placeholder="Search Laptop Bag..." oninput="searchP()"><button onclick="searchP()">Search</button></div></div>
 <div class="g" id="grid">
-<div class="c" data-name="abaya combo hijab pin box"><div onclick="openP(1)"><img src="https://placehold.co/400x400/111111/ffffff?text=Abaya+Combo+Hijab+Pin+Box"><div class="i"><div class="cat">ABAYA</div><div class="n">Abaya Combo + Hijab + Pin Box</div><div class="pr">Rs. 3499<span class="ol">Rs. 4599</span><span class="dis">24% OFF</span><span class="count">Stock: 22</span></div></div></div></div>
-<div class="c" data-name="cloth bundle cotton fabric"><div onclick="openP(2)"><img src="https://placehold.co/400x400/f5f5dc/000000?text=Cloth+Bundle"><div class="i"><div class="cat">CLOTH</div><div class="n">Cloth Bundle Cotton Fabric</div><div class="pr">Rs. 1299<span class="ol">Rs. 1899</span><span class="dis">31% OFF</span><span class="count">Stock: 40</span></div></div></div></div>
-<div class="c" data-name="caps baseball stylish"><div onclick="openP(3)"><img src="https://placehold.co/400x400/222222/ffffff?text=Caps+Stylish+Front"><div class="i"><div class="cat">CAPS</div><div class="n">Caps - Baseball Cap Stylish</div><div class="pr">Rs. 699<span class="ol">Rs. 999</span><span class="dis">30% OFF</span><span class="count">Stock: 35</span></div></div></div></div>
-<div class="c" data-name="shoes flat box"><div onclick="openP(4)"><img src="https://placehold.co/400x400/111111/ffffff?text=Shoes+Box+Display"><div class="i"><div class="cat">SHOES</div><div class="n">Shoes - Flat Shoes Box Display</div><div class="pr">Rs. 1899<span class="ol">Rs. 2699</span><span class="dis">29% OFF</span><span class="count">Stock: 18</span></div></div></div></div>
-<div class="c" data-name="bottle steel water 1l"><div onclick="openP(5)"><img src="https://placehold.co/400x400/c0c0c0/000000?text=Steel+Bottle+1L"><div class="i"><div class="cat">BOTTLE</div><div class="n">Bottle - Steel Water Bottle 1L</div><div class="pr">Rs. 899<span class="ol">Rs. 1299</span><span class="dis">30% OFF</span><span class="count">Stock: 50</span></div></div></div></div>
-<div class="c" data-name="laptop silver front view"><div onclick="openP(6)"><img src="https://placehold.co/400x400/e8e8e8/000000?text=Laptop+Front+View+Samne"><div class="i"><div class="cat">LAPTOP</div><div class="n">Laptop - Silver Laptop Front View</div><div class="pr">Rs. 84999<span class="ol">Rs. 99999</span><span class="dis">15% OFF</span><span class="count">Stock: 6</span></div></div></div></div>
-<div class="c" data-name="phone smartphone box"><div onclick="openP(7)"><img src="https://placehold.co/400x400/111111/ffffff?text=Phone+Box+Pack"><div class="i"><div class="cat">PHONE</div><div class="n">Phone - Smartphone Box Pack</div><div class="pr">Rs. 35999<span class="ol">Rs. 42999</span><span class="dis">16% OFF</span><span class="count">Stock: 12</span></div></div></div></div>
-<div class="c" data-name="bachon ke kapre kids clothes"><div onclick="openP(8)"><img src="https://placehold.co/400x400/FFC0CB/000000?text=Kids+Clothes+Folded"><div class="i"><div class="cat">KIDS CLOTHES</div><div class="n">Bachon Ke Kapre - Kids Clothes</div><div class="pr">Rs. 1499<span class="ol">Rs. 2199</span><span class="dis">32% OFF</span><span class="count">Stock: 30</span></div></div></div></div>
-<div class="c" data-name="lunch box steel 4 partition"><div onclick="openP(9)"><img src="https://placehold.co/400x400/c0c0c0/000000?text=Lunch+Box+Steel"><div class="i"><div class="cat">LUNCH BOX</div><div class="n">Lunch Box - Steel 4 Partition</div><div class="pr">Rs. 1299<span class="ol">Rs. 1899</span><span class="dis">31% OFF</span><span class="count">Stock: 45</span></div></div></div></div>
-<div class="c" data-name="school bags backpack front view"><div onclick="openP(10)"><img src="https://placehold.co/400x400/111111/ffffff?text=School+Bag+Front+View+Samne"><div class="i"><div class="cat">SCHOOL BAGS</div><div class="n">School Bags - Backpack Front View</div><div class="pr">Rs. 1999<span class="ol">Rs. 2799</span><span class="dis">28% OFF</span><span class="count">Stock: 28</span></div></div></div></div>
-<div class="c" data-name="snacks chips biscuits"><div onclick="openP(11)"><img src="https://placehold.co/400x400/FFD700/000000?text=Snacks+Pack"><div class="i"><div class="cat">SNACKS</div><div class="n">Snacks - Chips & Biscuits Pack</div><div class="pr">Rs. 499<span class="ol">Rs. 699</span><span class="dis">28% OFF</span><span class="count">Stock: 80</span></div></div></div></div>
-<div class="c" data-name="chocolate milk box"><div onclick="openP(12)"><img src="https://placehold.co/400x400/8B4513/ffffff?text=Chocolate+Box"><div
+<div class="c" data-name="caps"><div onclick="oP(2)"><img src="https://placehold.co/300x300/222/fff?text=Caps"><div class="i"><div class="n">Caps Front</div><div class="pr">Rs699 | Stock:35 | 30% OFF</div></div></div></div>
+<div class="c" data-name="shoes"><div onclick="oP(3)"><img src="https://placehold.co/300x300/111/fff?text=Shoes"><div class="i"><div class="n">Shoes Box</div><div class="pr">Rs1899 | Stock:18 | 29% OFF</div></div></div></div>
+<div class="c" data-name="bottle"><div onclick="oP(4)"><img src="https://placehold.co/300x300/aaa/000?text=Bottle"><div class="i"><div class="n">Bottle Steel 1L</div><div class="pr">Rs899 | Stock:50 | 30% OFF</div></div></div></div>
+<div class="c" data-name="laptop"><div onclick="oP(5)"><img src="https://placehold.co/300x300/eee/000?text=Laptop+Front"><div class="i"><div class="n">Laptop Front Samne</div><div class="pr">Rs84999 | Stock:6 | 15% OFF</div></div></div></div>
+<div class="c" data-name="bag"><div onclick="oP(6)"><img src="https://placehold.co/300x300/111/fff?text=Bag+Front"><div class="i"><div class="n">School Bag Front Samne</div><div class="pr">Rs1999 | Stock:28 | 28% OFF</div></div></div></div>
+<div class="c" data-name="lunch"><div onclick="oP(7)"><img src="https://placehold.co/300x300/aaa/000?text=Lunch"><div class="i"><div class="n">Lunch Box Steel</div><div class="pr">Rs1299 | Stock:45 | 31% OFF</div></div></div></div>
+<div class="c" data-name="chair"><div onclick="oP(8)"><img src="https://placehold.co/300x300/222/fff?text=Chair"><div class="i"><div class="n">Chair Front</div><div class="pr">Rs8999 | Stock:9 | 30% OFF</div></div></div></div>
+<div class="c" data-name="bartan"><div onclick="oP(9)"><img src="https://placehold.co/300x300/aaa/000?text=Bartan"><div class="i"><div class="n">Bartan Steel Set</div><div class="pr">Rs2499 | Stock:25 | 28% OFF</div></div></div></div>
+<div class="c" data-name="cloth"><div onclick="oP(10)"><img src="https://placehold.co/300x300/f5f5dc/000?text=Cloth"><div class="i"><div class="n">Cloth Bundle</div><div class="pr">Rs1299 | Stock:40 | 31% OFF</div></div></div></div>
+</div><div class="m" id="modal" onclick="if(event.target==this)cM()"><div class="b"><img id="mImg"><div class="pd"><div class="cl" onclick="cM()">×</div><h3 id="mT" style="font-size:11px"></h3><div id="mP" style="font-size:10px;font-weight:800;margin-top:4px"></div><div style="font-size:8px;margin-top:6px">Andar 3 alag Rs alag:</div><div class="op" id="opts"></div><button class="btn" onclick="aC()">Add to Cart</button></div></div></div>
+<script>
+var P=[{id:2,n:"Caps",img:"https://placehold.co/300x300/222/fff?text=Caps",p:699},{id:3,n:"Shoes",img:"https://placehold.co/300x300/111/fff?text=Shoes",p:1899},{id:4,n:"Bottle",img:"https://placehold.co/300x300/aaa/000?text=Bottle",p:899},{id:5,n:"Laptop Front Samne",img:"https://placehold.co/300x300/eee/000?text=Laptop+Front",p:84999},{id:6,n:"Bag Front Samne",img:"https://placehold.co/300x300/111/fff?text=Bag+Front",p:1999},{id:7,n:"Lunch Box",img:"https://placehold.co/300x300/aaa/000?text=Lunch",p:1299},{id:8,n:"Chair Front",img:"https://placehold.co/300x300/222/fff?text=Chair",p:8999},{id:9,n:"Bartan Set",img:"https://placehold.co/300x300/aaa/000?text=Bartan",p:2499},{id:10,n:"Cloth",img:"https://placehold.co/300x300/f5f5dc/000?text=Cloth",p:1299}];
+var cur=null,sel=null,cart=0;
+function searchP(){var q=document.getElementById('q').value.toLowerCase();var cs=document.querySelectorAll('.c');for(var i=0;i<cs.length;i++){var n=cs[i].getAttribute('data-name');cs[i].style.display=n.includes(q)?"block":"none"}}
+function oP(id){for(var i=0;i<P.length;i++){if(P[i].id==id){cur=P[i];break}}document.getElementById('mT').innerText=cur.n;document.getElementById('mImg').src=cur.img;document.getElementById('mP').innerText="Rs."+cur.p;var V=[];if(cur.id==2){V=[{l:"Black",pr:699},{l:"White",pr:749},{l:"Beige",pr:799}]}else if(cur.id==5){V=[{l:"i5/8/256",pr:84999},{l:"i5/16/512",pr:94999},{l:"i7/16/512",pr:114999}]}else if(cur.id==6){V=[{l:"Black S",pr:1999},{l:"Black L",pr:2399},{l:"Blue M",pr:2199}]}else{V=[{l:"D1",pr:cur.p},{l:"D2",pr:cur.p+100},{l:"D3",pr:cur.p+200}]}var h="";for(var j=0;j<V.length;j++){h+='<div class="o" id="o'+j+'" onclick="pick('+j+','+V[j].pr+')"><img src="'+cur.img+'"><div style="font-size:7px;font-weight:800">'+V[j].l+'</div><div style="font-size:8px;font-weight:800">Rs'+V[j].pr+'</div></div>'}document.getElementById('opts').innerHTML=h;sel=null;document.getElementById('modal').style.display="block"}
+function pick(i,pr){var os=document.querySelectorAll('.o');for(var k=0;k<os.length;k++){os[k].classList.remove('sel')}document.getElementById('o'+i).classList.add('sel');sel=pr;document.getElementById('mP').innerText="Rs."+pr}
+function cM(){document.getElementById('modal').style.display="none"}
+function aC(){if(!sel)sel=cur.p;cart++;document.getElementById('ct').innerText=cart;alert(cur.n+" Rs"+sel+" Added");cM()}
+</script></body></html>
