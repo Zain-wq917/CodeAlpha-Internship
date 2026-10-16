@@ -1,114 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zainab Collection - Modest Wear</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#faf9f7;color:#222}
-.header{background:#fff;border-bottom:1px solid #ece5de;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:50}
-.logo{font-weight:700;font-size:20px;letter-spacing:1px}
-.logo span{font-weight:400;font-size:12px;display:block;color:#777;letter-spacing:0}
-.note{text-align:center;padding:10px;background:#f6f0ea;font-size:11px;color:#6b5a52}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
-@media(min-width:768px){.grid{grid-template-columns:repeat(4,1fr);padding:20px 24px;gap:16px}}
-.card{background:#fff;border:1px solid #f0e6df;border-radius:16px;overflow:hidden;cursor:pointer}
-.card img{width:100%;height:165px;object-fit:cover;background:#f7f2ee}
-@media(min-width:768px){.card img{height:210px}}
-.info{padding:10px 12px}
-.name{font-size:13px;font-weight:600;line-height:1.3;height:34px;overflow:hidden}
-.price-row{margin-top:6px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.price{font-weight:700;font-size:14px}
-.old{font-size:11px;color:#999;text-decoration:line-through}
-.rating{font-size:11px;color:#b5855a;margin-top:4px}
-.rating span{color:#222}
-.footer{text-align:center;padding:24px 16px;background:#fff;border-top:1px solid #ece5de;margin-top:20px;font-size:12px;color:#777;line-height:1.6}
-.modal{display:none;position:fixed;inset:0;background:#0008;z-index:100;padding:12px;overflow-y:auto}
-.box{background:#fff;border-radius:20px;max-width:900px;margin:20px auto;overflow:hidden;display:grid}
-@media(min-width:800px){.box{grid-template-columns:1fr 1fr}}
-.box img.main{width:100%;height:300px;object-fit:cover}
-@media(min-width:800px){.box img.main{height:100%;min-height:480px}}
-.pad{padding:18px;position:relative}
-.close{position:absolute;top:12px;right:12px;width:32px;height:32px;background:#fff;border-radius:50%;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 8px #0002}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.o{border:1px solid #ece5de;border-radius:12px;padding:10px;cursor:pointer}
-.o.sel{border-color:#222;background:#faf6f2}
-.o img{width:100%;height:70px;object-fit:cover;border-radius:8px}
-.btn{width:100%;padding:14px;background:#222;color:#fff;border:none;border-radius:12px;font-weight:700;margin-top:16px;cursor:pointer}
-</style>
-</head>
-<body>
-<div class="header"><div class="logo">ZAINAB COLLECTION<span>Modest Wear & Essentials • ID: CA/DF1/316075</span></div><div style="font-size:12px;font-weight:700">🛒 <span id="cart">0</span></div></div>
-<div class="note">20 Products - Prices in PKR - No human/animal images - Modest collection by Zainab Asim</div>
-<div class="grid" id="grid"></div>
-<div class="footer"><b>Zainab Collection</b><br>Ye collection adab aur sharm-o-haya ko samne rakh kar banayi gayi hai.<br>20 products with price, rating and inner options.<br>Zainab Asim • CA/DF1/316075 • CodeAlpha Internship</div>
-
-<div class="modal" id="modal" onclick="if(event.target==this)closeM()">
-<div class="box"><img class="main" id="mImg"><div class="pad"><div class="close" onclick="closeM()">×</div><h3 id="mTitle" style="margin-top:8px"></h3><p id="mDesc" style="margin-top:8px;color:#666;font-size:13px;line-height:1.5"></p><div style="margin-top:12px"><span id="mPrice" style="font-weight:800;font-size:18px"></span><span id="mOld" style="font-size:12px;color:#999;text-decoration:line-through;margin-left:6px"></span><div id="mRate" style="font-size:12px;color:#b5855a;margin-top:4px"></div></div><h4 style="margin-top:16px;font-size:13px">Is product ke andar mazeed options:</h4><div class="opts" id="opts"></div><button class="btn" onclick="addCart()">Add to Cart</button></div></div>
-</div>
-
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ZAINAB COLLECTION</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}body{background:#faf9f7}.h{padding:14px;background:#fff;border-bottom:1px solid #eee;display:flex;justify-content:space-between;position:sticky;top:0;z-index:10}.g{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}.c{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #eee;cursor:pointer}.c img{width:100%;height:175px;object-fit:cover;background:#f3ece6}.i{padding:9px}.cat{font-size:8px;background:#fdf2ec;color:#8a6d5b;padding:2px 6px;border-radius:10px;font-weight:700}.n{font-size:11.5px;font-weight:800;height:32px;overflow:hidden;line-height:1.2;margin-top:3px}.pr{font-weight:900;font-size:13px}.ol{font-size:10px;color:#999;text-decoration:line-through;margin-left:3px}.rt{font-size:10px;color:#8a6d5b}.m{display:none;position:fixed;inset:0;background:#0008;z-index:99;padding:10px;overflow:auto}.b{background:#fff;border-radius:16px;max-width:850px;margin:auto;overflow:hidden;display:grid}@media(min-width:700px){.b{grid-template-columns:1fr 1fr}}.b img.main{width:100%;height:330px;object-fit:cover}.pd{padding:14px;position:relative}.cl{position:absolute;top:10px;right:10px;background:#fff;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;cursor:pointer}.op{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.o{border:1px solid #eee;border-radius:10px;padding:7px;cursor:pointer}.o.sel{border-color:#111;background:#fdf6f2}.o img{width:100%;height:55px;object-fit:cover;border-radius:6px}.btn{width:100%;padding:11px;background:#111;color:#fff;border:none;border-radius:10px;margin-top:10px;font-weight:700}</style></head><body>
+<div class="h"><div><b>ZAINAB COLLECTION</b><div style="font-size:10px;color:#777">Modest Wear • ID: CA/DF1/316075 • Rs.</div></div><div>🛒 <b id="ct">0</b></div></div>
+<div class="g" id="grid"></div>
+<div style="text-align:center;padding:16px;font-size:10px;color:#999">24 Products • Rs. Price • ★ Rating • Zainab Asim</div>
+<div class="m" id="modal" onclick="if(event.target==this)closeM()"><div class="b"><img class="main" id="mImg"><div class="pd"><div class="cl" onclick="closeM()">×</div><div id="mCat" class="cat"></div><h3 id="mT" style="font-size:14px"></h3><p id="mD" style="font-size:11px;color:#666;margin-top:5px"></p><div style="margin-top:7px"><b id="mP"></b><span id="mO" style="font-size:10px;color:#999;text-decoration:line-through;margin-left:4px"></span><div id="mR" style="font-size:10px;color:#8a6d5b"></div></div><h4 style="font-size:11px;margin-top:10px">Andar 5 options:</h4><div class="op" id="opts"></div><button class="btn" onclick="addC()">Add to Cart</button></div></div></div>
 <script>
-const products=[
-{id:1,n:"Black Front Open Abaya - Nida Fabric",p:3499,old:4599,r:"4.8 (124)",img:"https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=500",d:"Fabric: Nida • Length: 54-56 • Front open with buttons • No model - fabric display only"},
-{id:2,n:"Brown Embroidered Abaya - Georgette",p:3999,old:5299,r:"4.7 (98)",img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500",d:"Georgette embroidered abaya • Sleeves work • Modest cutting"},
-{id:3,n:"Navy Blue Plain Abaya - Simple",p:2999,old:3999,r:"4.9 (210)",img:"https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=500",d:"Simple daily wear abaya • Soft fabric • Umbrella style"},
-{id:4,n:"Beige Closed Abaya with Belt",p:3699,old:4799,r:"4.6 (76)",img:"https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=500",d:"Closed abaya with fabric belt • Nida • For college & office"},
-{id:5,n:"Grey Turkish Abaya - Umbrella",p:4299,old:5599,r:"4.8 (132)",img:"https://images.unsplash.com/photo-1620799139507-7156ec1c9e92?w=500",d:"Turkish style umbrella abaya • Flowy • With hijab cap"},
-{id:6,n:"Black Butterfly Abaya - Front Close",p:3799,old:4899,r:"4.7 (110)",img:"https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500",d:"Butterfly style abaya • Front closed • Wide sleeves"},
-{id:7,n:"Premium Chiffon Hijab - Black",p:599,old:899,r:"4.9 (342)",img:"https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=500",d:"Chiffon hijab • 180cm • Non-slip • Daily use"},
-{id:8,n:"Hijab Pins Box - 50 pcs Multicolor",p:450,old:700,r:"4.8 (210)",img:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500",d:"Hijab safety pins • 50 pcs • Multicolor • No rust"},
-{id:9,n:"Undercap Hijab - 2 pcs Set",p:399,old:600,r:"4.7 (180)",img:"https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=500",d:"Cotton undercap • Black & skin • Breathable"},
-{id:10,n:"Georgette Hijab - 3 Colors Set",p:1299,old:1899,r:"4.8 (95)",img:"https://images.unsplash.com/photo-1620799139652-715f00d04e52?w=500",d:"Georgette hijab set • 3 colors • 180x80cm"},
-{id:11,n:"PU Leather Tote Bag - Black",p:3299,old:4299,r:"4.6 (88)",img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500",d:"Shoulder bag • PU leather • Long strap included • Only product image"},
-{id:12,n:"Hand Clutch - Beige Embroidered",p:1499,old:2199,r:"4.7 (64)",img:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500",d:"Embroidered clutch • For abaya matching • Chain strap"},
-{id:13,n:"School Backpack - Black Waterproof",p:1999,old:2799,r:"4.5 (72)",img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",d:"Backpack • Waterproof • Laptop compartment • For students"},
-{id:14,n:"Brown Leather Wallet - Gents",p:899,old:1299,r:"4.6 (103)",img:"https://images.unsplash.com/photo-1627123424574-724758594e93?w=500",d:"Leather wallet • With box • 8 cards slot"},
-{id:15,n:"Silver Anklet Box - No Feet Display",p:599,old:899,r:"4.5 (55)",img:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500",d:"Anklet in box display • Artificial silver • No human photo"},
-{id:16,n:"Pearl Necklace Set - Box Display",p:2499,old:3499,r:"4.8 (120)",img:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500",d:"Necklace set in velvet box • Gold plated • Only box photo"},
-{id:17,n:"Bracelet Box - Gold Plated",p:699,old:999,r:"4.6 (42)",img:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500",d:"Bracelet in box • Flat lay • No hand"},
-{id:18,n:"Matte Lipstick Set - 6 Colors",p:1299,old:1999,r:"4.7 (156)",img:"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",d:"Lipstick set • Flat lay • 6 colors • No lips photo"},
-{id:19,n:"Face Serum - Vitamin C - Bottle Only",p:1599,old:2299,r:"4.8 (201)",img:"https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500",d:"Serum bottle product photo • No face • Original"},
-{id:20,n:"Travel Duffel Bag - Large",p:3999,old:4999,r:"4.6 (68)",img:"https://images.unsplash.com/photo-1546938576-6e6a64f45801?w=500",d:"Travel bag • Large size • Product only • No person"},
+const I={
+abaya:["https://images.unsplash.com/photo-1445205170230-053b83016050?w=500","https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=500","https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=500","https://images.unsplash.com/photo-1525507119028-edfd314dda60?w=500","https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=500"],
+hijab:["https://images.unsplash.com/photo-1620799139652-715f00d04e52?w=500","https://images.unsplash.com/photo-1620799139507-7156ec1c9e92?w=500"],
+cap:["https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500","https://images.unsplash.com/photo-1521369909029-2afed882baee?w=500"],
+bag:["https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500","https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500","https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?w=500","https://images.unsplash.com/photo-1627123424574-724758594e93?w=500"],
+shoe:["https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500","https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"],
+jewel:["https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500","https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=500","https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500"]
+};
+const prods=[
+{id:1,n:"Black Front Open Abaya - Nida",cat:"ABAYA",p:3499,o:4599,r:"4.8 (124)",img:I.abaya[0],d:"Nida • Folded - no person"},
+{id:2,n:"Brown Embroidered Abaya - Georgette",cat:"ABAYA",p:3999,o:5299,r:"4.7 (98)",img:I.abaya[1],d:"Georgette embroidered • Folded fabric only"},
+{id:3,n:"Navy Blue Plain Abaya",cat:"ABAYA",p:2999,o:3999,r:"4.9 (210)",img:I.abaya[2],d:"Plain umbrella • Hanger only"},
+{id:4,n:"Beige Closed Abaya with Belt",cat:"ABAYA",p:3699,o:4799,r:"4.6 (76)",img:I.abaya[3],d:"Beige closed with belt • Folded"},
+{id:5,n:"Grey Turkish Umbrella Abaya",cat:"ABAYA",p:4299,o:5599,r:"4.8 (132)",img:I.abaya[4],d:"Turkish umbrella • Fabric only"},
+{id:6,n:"Black Butterfly Front Close Abaya",cat:"ABAYA",p:3799,o:4899,r:"4.7 (110)",img:I.abaya[0],d:"Butterfly • Front close • Folded"},
+{id:7,n:"Chiffon Hijab Black 180cm",cat:"HIJAB",p:599,o:899,r:"4.9 (342)",img:I.hijab[0],d:"Chiffon folded"},
+{id:8,n:"Undercap 2 pcs Set Cotton",cat:"HIJAB",p:399,o:600,r:"4.7 (180)",img:I.hijab[1],d:"Undercap folded"},
+{id:9,n:"Hijab Pins Box 50 pcs",cat:"HIJAB",p:450,o:700,r:"4.8 (210)",img:I.hijab[0],d:"Pins box only"},
+{id:10,n:"Georgette Hijab 3 Colors Set",cat:"HIJAB",p:1299,o:1899,r:"4.8 (95)",img:I.hijab[1],d:"3 colors folded"},
+{id:11,n:"Black Baseball Cap Stylish",cat:"CAP",p:799,o:1199,r:"4.6 (92)",img:I.cap[0],d:"Cap only - no person wearing"},
+{id:12,n:"White Sports Cap Cotton",cat:"CAP",p:699,o:999,r:"4.7 (64)",img:I.cap[1],d:"White cap only"},
+{id:13,n:"PU Leather Tote Bag Black",cat:"BAG",p:3299,o:4299,r:"4.6 (88)",img:I.bag[0],d:"Tote bag only - no hand"},
+{id:14,n:"School Backpack Black Waterproof",cat:"BAG",p:1999,o:2799,r:"4.5 (72)",img:I.bag[1],d:"Backpack only"},
+{id:15,n:"Hand Clutch Beige Embroidered",cat:"BAG",p:1499,o:2199,r:"4.7 (64)",img:I.bag[2],d:"Clutch only"},
+{id:16,n:"Brown Leather Wallet Box",cat:"WALLET",p:899,o:1299,r:"4.6 (103)",img:I.bag[3],d:"Wallet box only"},
+{id:17,n:"Black Flat Shoes Box Display",cat:"SHOES",p:1899,o:2699,r:"4.6 (54)",img:I.shoe[0],d:"Shoes box - no feet"},
+{id:18,n:"White Sneakers Sports Box",cat:"SHOES",p:2499,o:3499,r:"4.7 (71)",img:I.shoe[1],d:"Sneakers box - no feet"},
+{id:19,n:"Steel Lunch Box 4 Partition",cat:"LUNCH BOX",p:1299,o:1899,r:"4.8 (110)",img:I.bag[0],d:"Lunch box only - steel"},
+{id:20,n:"Kids Bento Lunch Box Pink",cat:"LUNCH BOX",p:899,o:1299,r:"4.7 (85)",img:I.bag[1],d:"Pink bento box only"},
+{id:21,n:"Pearl Necklace Set Velvet Box",cat:"JEWELRY",p:2499,o:3499,r:"4.8 (120)",img:I.jewel[0],d:"Necklace velvet box - no neck"},
+{id:22,n:"Silver Anklet Box Display",cat:"JEWELRY",p:599,o:899,r:"4.5 (55)",img:I.jewel[1],d:"Anklet box - no feet"},
+{id:23,n:"Bracelet Box Gold Plated",cat:"JEWELRY",p:699,o:999,r:"4.6 (42)",img:I.jewel[1],d:"Bracelet box - no hand"},
+{id:24,n:"Matte Lipstick Set 6 Colors",cat:"BEAUTY",p:1299,o:1999,r:"4.7 (156)",img:I.jewel[2],d:"Lipstick box - no lips"},
 ];
-let cur=null, selPrice=null, cart=0;
-function render(){
-let h=""; products.forEach(p=>{h+=`<div class="card" onclick="openP(${p.id})"><img src="${p.img}" alt="${p.n}"><div class="info"><div class="name">${p.n}</div><div class="price-row"><span class="price">Rs. ${p.p.toLocaleString()}</span><span class="old">Rs. ${p.old.toLocaleString()}</span></div><div class="rating">★ ${p.r}</div></div></div>`});
-document.getElementById('grid').innerHTML=h;
-}
-function openP(id){
-cur=products.find(x=>x.id==id);
-document.getElementById('mTitle').innerText=cur.n;
-document.getElementById('mDesc').innerText=cur.d;
-document.getElementById('mImg').src=cur.img;
-document.getElementById('mPrice').innerText="Rs. "+cur.p.toLocaleString();
-document.getElementById('mOld').innerText="Rs. "+cur.old.toLocaleString();
-document.getElementById('mRate').innerText="★ "+cur.r;
-// inner options - 4 designs with different rates
-let opts=[
-{label:"Standard - Black",price:cur.p,img:cur.img},
-{label:"Premium - With Lining",price:cur.p+400,img:"https://picsum.photos/300/300?random="+id+"1"},
-{label:"Embroidered Edition",price:cur.p+900,img:"https://picsum.photos/300/300?random="+id+"2"},
-{label:"Full Set with Hijab",price:cur.p+1300,img:"https://picsum.photos/300/300?random="+id+"3"},
-];
-let oh=""; opts.forEach((o,i)=>{oh+=`<div class="o" id="o${i}" onclick="pick(${i},${o.price})"><img src="${o.img}"><div style="font-size:12px;font-weight:600;margin-top:6px">${o.label}</div><div style="font-size:12px;font-weight:700;color:#222;margin-top:2px">Rs. ${o.price.toLocaleString()}</div></div>`});
-document.getElementById('opts').innerHTML=oh;
-selPrice=null; document.getElementById('modal').style.display="block";
-}
-function pick(i,pr){
-document.querySelectorAll('.o').forEach(e=>e.classList.remove('sel'));
-document.getElementById('o'+i).classList.add('sel');
-selPrice=pr; document.getElementById('mPrice').innerText="Rs. "+pr.toLocaleString();
-}
-function closeM(){document.getElementById('modal').style.display="none";}
-function addCart(){
-if(!selPrice) selPrice=cur.p;
-cart++; document.getElementById('cart').innerText=cart;
-alert("Added to cart: "+cur.n+"\nPrice: Rs. "+selPrice.toLocaleString()+"\nJazakAllah!");
-closeM();
-}
-render();
-</script>
-</body>
-  </html>
+
+let cur=null,sel=null,cart=0;
+function render(){let h="";prods.forEach(p=>{h+=`<div class="c" onclick="openP(${p.id})"><img src="${p.img}"><div class="i"><div class="cat">${p.cat}</div><div class="n">${p.n}</div><div class="pr">Rs. ${p.p.toLocaleString()}<span class="ol">Rs. ${p.o.toLocaleString()}</span></div><div class="rt">★ ${p.r}</div></div></div>`});document.getElementById('grid').innerHTML=h;}
+function openP(id){cur=prods.find(x=>x.id==id);document.getElementById('mCat').innerText=cur.cat;document.getElementById('mT').innerText=cur.n;document.getElementById('mD').innerText=cur.d;document.getElementById('mImg').src
